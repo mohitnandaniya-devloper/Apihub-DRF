@@ -1,0 +1,26 @@
+# Ignore Python bytecode files
+__pycache__
+*.pyc
+*.pyo
+
+# Ignore SQLite database file (if you're using SQLite)
+*.db
+
+# Ignore log files
+*.log
+
+# Ignore Git repository files
+.git
+.gitignore
+
+# Ignore environment variables file
+*.env
+
+# Ignore virtual environments
+venv/
+*.venv/
+
+# Ignore Docker-related files (optional)
+Dockerfile
+docker-compose.yml
+
