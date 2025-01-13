@@ -33,3 +33,47 @@ services:
     restart: always
     ports:
       - 8080:8080
+
+
+# --------------------------------------------    Production    --------------------------------------------
+
+
+# version: '3'
+# services:
+#   db:
+#     container_name: apihubDB
+#     image: postgres:13
+#     restart: always
+#     volumes:
+#       - ./data/db:/var/lib/postgresql/data
+#     ports:
+#       - 5432:5432
+#     environment:
+#       POSTGRES_DB: ${APIHUB_DB_NAME}
+#       POSTGRES_USER: ${APIHUB_DB_USER}
+#       POSTGRES_PASSWORD: ${APIHUB_DB_PASSWORD}
+
+#   web:
+#     container_name: apihub
+#     build: .
+#     command: >
+#       bash -c "python manage.py collectstatic --noinput &&
+#                python manage.py makemigrations &&
+#                python manage.py migrate &&
+#                gunicorn -w 4 -b 0.0.0.0:8000 core.wsgi:application"
+#     volumes:
+#       - .:/core
+#     ports:
+#       - 8000:8000
+#     environment:
+#       DJANGO_SECRET_KEY: ${APIHUB_SECRET_KEY}
+#       DJANGO_DEBUG: ${APIHUB_DEBUG}
+#     depends_on:
+#       - db
+
+#   adminer:
+#     container_name: adminer
+#     image: adminer
+#     restart: always
+#     ports:
+#       - 8080:8080

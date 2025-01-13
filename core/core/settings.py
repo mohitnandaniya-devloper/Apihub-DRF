@@ -28,7 +28,7 @@ SECRET_KEY = os.getenv('APIHUB_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('APIHUB_DEBUG')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*'] # Replace "*" with specific hosts for better security.
 
 
 # Application definition
@@ -85,7 +85,7 @@ DATABASES = {
         "NAME": os.getenv('APIHUB_DB_NAME'),
         "USER": os.getenv('APIHUB_DB_USER'),
         "PASSWORD": os.getenv('APIHUB_DB_PASSWORD'),
-        "HOST": "db",
+        "HOST": os.getenv('APIHUB_DB_HOST'),
         "PORT": "5432",
     }
 }
